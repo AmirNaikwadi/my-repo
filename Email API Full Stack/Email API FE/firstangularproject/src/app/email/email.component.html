@@ -1,0 +1,37 @@
+<mat-card appearance="outlined" class="card">
+    <mat-card-content>Welcome to Email API</mat-card-content>
+    <div class="container">
+        <form [formGroup]="myForm" (ngSubmit)= submitForm()>
+
+            <mat-form-field appearance="fill" class="form-field">
+                <mat-label>Recipient Email</mat-label>
+                <input name="to" [(ngModel)]="data.to" matInput formControlName="email" placeholder="Enter recipient's email address">
+                <mat-error *ngIf="myForm.get('email')?.hasError('required')" class="error">
+                    Email is required
+                </mat-error>
+                <mat-error *ngIf="myForm.get('email')?.hasError('email')">
+                    Please enter a valid email address
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="form-field">
+                <mat-label>Subject</mat-label>
+                <input name="subject" [(ngModel)]="data.subject" matInput formControlName="name" placeholder="Enter your email subject">
+                <mat-error *ngIf="myForm.get('name')?.hasError('required')">
+                    Subject is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="form-field">
+                <mat-label>Message</mat-label>
+                <textarea name="message" [(ngModel)]="data.message" matInput formControlName="message" placeholder="Enter your message"></textarea>
+                <mat-error *ngIf="myForm.get('message')?.hasError('required')">
+                    Message is required
+                </mat-error>
+            </mat-form-field>
+       
+    <button mat-raised-button color="primary" type="submit" [disabled]="myForm.invalid" class="button">Submit</button>
+</form>
+</div>
+
+</mat-card>

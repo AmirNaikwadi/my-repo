@@ -1,0 +1,19 @@
+.card{
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    width: 50%;
+    font-family: "Times New Roman", Times, serif;
+    font-size:30px;
+    background-color: aliceblue;
+}
+.button{
+    width: 30%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: blue;
+    color: aliceblue;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+}
